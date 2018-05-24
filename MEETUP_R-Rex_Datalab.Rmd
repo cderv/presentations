@@ -1,0 +1,130 @@
+---
+title: "REX sur la mise en place d'un datalab R à RTE"
+subtitle: "Meetup R Addicts x EDF"
+author: "Christope Dervieux"
+date: "28 mai 2018"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# A propos
+
+* Utilisateurs de R depuis 6 ans maintenant
+* Actuellement chez RTE (Réseau de Transport d'Electricité)
+* Depuis 1 an, en appui autour des sujets/projets R pour les chargés d'études et développeurs
+  * Expertise
+  * Formation
+  * Déploiement - Mise en production
+  * Solutions mutualisés pour les utilisateurs
+  
+.box[Mise en place d'un datalab]
+
+???
+
+Rattaché au niveau du SI dans les démarches d'open data interne.
+
+Sujets:
+- Développement de packages
+- Mise en place datalab
+- Conseil développement et expertise
+
+---
+
+# Un datalab R à RTE: Kesako ?
+
++ Offrir un environnemnt d'étude et de développement **mutualisé** et **prêt à l'emploi** 
++ Proposer des **services en interne** pour les datascientists, chargés d'études et développeurs.
+
+**Mutualisé**: 
++ Favoriser la collaboration entre équipes sur des projets
++ Pouvoir accéder à des données centralisées (DataLake, DataWareHouse, ...)
++ Partager la ressource de calcul
+
+**Prêt à l'emploi**:
++ Juste à se connecter, pas d'installation à faire, de version à gérer
++ Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
+
+**Service en interne**:
++ Pleins de possibilités sur le web (shinyapps.io, Rpubs, Github, Github pages, Travis, ...)
+  + comment faire en interne ?  
+
+???
+
+POurquoi ? Pour qui ?
+
+Avantage: 
++ Déporté
+
+Excel ++
+
+---
+
+.center[
+
+```{r, results='asis', echo = FALSE}
+cat(readLines("draw-io_embded.txt"))
+```
+
+]
+
+???
+
++ 2 serveurs Rstudio Pro en cluster
++ 1 sereurs RStudio Connect
++ Un miroir interne du CRAN, avec possibilité de publier des packages internes
++ Accès à "l'usine de développement" (Gitlab, Jenkins, Nexus, SonarQube)
++ Accès aux données de l'entreprise
+
+Lien vers présentation Benoit lors de sa conf
+
+---
+layout: true
+
+# Serveurs RStudio Pro
+
+---
+
+## Technique
+
+Deux serveurs en cluster pour répartir la charge et assurer la disponibilité. 
+
+Permet d'offrir des ressources de calculs mutalisés.
+
+.pull-left[
+Avantage pour l'administration:
+* Offre l'authentification (LDAP, Kerberos, ...)
+* Interface d'administration et monitoring
+* Drivers pour les bases de données inclus
+* **Support**
+]
+
+.pull-right[
+Avantage pour les utilisateurs:
+* Plusieurs versions de R disponibles
+* Multi-sessions
+]
+
+---
+
+## Service
+
++ Customisation des environnements ( _Rprofile.site_ et _Renviron.site_ )
++ Librairies partagées (`.Library.site` dans R et variable d'environnement `R_LIBS_SITE`)
++ Connexion centralisé aux données (_DNS au niveau système_)
+
+
+---
+layout: false
+
+arret
+
+---
