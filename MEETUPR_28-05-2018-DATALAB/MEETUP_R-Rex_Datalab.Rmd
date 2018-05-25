@@ -170,3 +170,24 @@ layout: false
 arret
 
 ---
+
+# Des termes pas habituels
+
+.center[
+```{r, echo = FALSE}
+words <- c("NAS", "LDAP", "ACLv3", "KERBEROS", "ACLv4", "NTLM", "HTTP_PROXY", "Redhat", "PAM", "CLI",
+           "ODBC", "DSN")
+words <- sample(words, size = 30, replace = length(words) < 30)
+freq <- sample(1:50, size = length(words), replace = TRUE)
+wordcloud::wordcloud(words, freq, 
+                     colors = RColorBrewer::brewer.pal(6,"Dark2"), random.color = TRUE, rot.per = 0.1)
+```
+]
+
+---
+
+# Favoriser le déploiement
+
++ Environnement "standart" sur réseau interne
++ `packrat.lock` généré dans le datalab 
++ `packrat::restore()` pour le déploiement
