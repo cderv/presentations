@@ -6,6 +6,7 @@ date: "28 mai 2018"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    # css: [default]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -39,10 +40,61 @@ Sujets:
 
 ---
 
-# Un datalab R à RTE: Kesako ?
+# Contexte: R en entreprise
+
+.center[### _Pas comme à la maison_]
+
+##  Poste de travail pas toujours adapté
+
++ Pas son poste perso
++ Eventuellement un poste bureautique
++ Sécurité : Je ne peux pas vraiment faire ce que je veux (Proxy, non admin, ...)
+
+## Cadre technique de l'entreprise
+
++ Respect d'un cadre technique pour le déploiement d'application en production
++ R non connu et référencé dans _les technologies validées_
++ Pas de solution de type cloud à disposition
+
+.center[ **Comment améliorer le cadre de travail pour la data** ?]
+
+???
+
+Pas de github, pas de travis, pas de codecov, etc... 
+
+Pas open source donc pas gratuit
+
+Je n'installe pas ce que je veux malheureusement 
+
+Cadre limité
+
+---
+
+# Les grandes idées d'un Datalab ?
+
++ Mutualisé
++ Prêt à l'emploi
++ Accompagné de services _"comme à l'extérieur"_
+
+.center[
+
+```{r, results='asis', echo = FALSE}
+cat(readLines("draw-io_embded.txt"))
+```
+
+]
+
+???
 
 + Offrir un environnemnt d'étude et de développement **mutualisé** et **prêt à l'emploi** 
 + Proposer des **services en interne** pour les datascientists, chargés d'études et développeurs.
+
+POurquoi ? Pour qui ?
+
+Avantage: 
++ Déporté
+
+Excel ++
 
 **Mutualisé**: 
 + Favoriser la collaboration entre équipes sur des projets
@@ -54,17 +106,8 @@ Sujets:
 + Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
 
 **Service en interne**:
-+ Pleins de possibilités sur le web (shinyapps.io, Rpubs, Github, Github pages, Travis, ...)
-  + comment faire en interne ?  
++ Pleins de possibilités sur le web (shinyapps.io, Rpubs, Github, Github pages, Travis, ...). Et en interne ?
 
-???
-
-POurquoi ? Pour qui ?
-
-Avantage: 
-+ Déporté
-
-Excel ++
 
 ---
 
@@ -89,8 +132,7 @@ Lien vers présentation Benoit lors de sa conf
 ---
 layout: true
 
-# Serveurs RStudio Pro
-
+# Environnement Mutualisé
 ---
 
 ## Technique
