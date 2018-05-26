@@ -6,11 +6,13 @@ date: "28 mai 2018"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    # css: [default]
+    chakra: libs/remark-latest.min.js
+    css: [default, metropolis]
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      # beforeInit: "macros.js"
 ---
 
 ```{r setup, include=FALSE}
@@ -88,17 +90,9 @@ Cadre limité
 + Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
 
 #### ...accompagné de service et solutions
-+ Connecté à d'autres solutions
-+ Adaptations au besoin dans l'entreprise
-+ Offrir du support 
-
-.center[
-
-```{r, results='asis', echo = FALSE}
-cat(readLines("draw-io_embded.txt"))
-```
-
-]
++ Intégration à d'autres solutions
++ Packages Internes
++ Support / Expertise 
 
 ???
 
@@ -126,14 +120,18 @@ Excel ++
 **Service en interne**:
 + Pleins de possibilités sur le web (shinyapps.io, Rpubs, Github, Github pages, Travis, ...). Et en interne ?
 
-
 ---
+
+# Solution interne en mode serveurs
 
 .center[
 
 ```{r, results='asis', echo = FALSE}
 cat(readLines("draw-io_embded.txt"))
 ```
+
+**En constante évolution**  
+**Objectif: mettre R au coeur des usages pour la donnée**
 
 ]
 
@@ -147,65 +145,69 @@ cat(readLines("draw-io_embded.txt"))
 
 Lien vers présentation Benoit lors de sa conf
 
----
-layout: true
-
-# Environnement Mutualisé
----
-
-## Technique
-
-Deux serveurs en cluster pour répartir la charge et assurer la disponibilité. 
-
-Permet d'offrir des ressources de calculs mutalisés.
-
-.pull-left[
-Avantage pour l'administration:
-* Offre l'authentification (LDAP, Kerberos, ...)
-* Interface d'administration et monitoring
-* Drivers pour les bases de données inclus
-* **Support**
-]
-
-.pull-right[
-Avantage pour les utilisateurs:
-* Plusieurs versions de R disponibles
-* Multi-sessions
-]
-
----
-
-## Service
-
-+ Customisation des environnements ( _Rprofile.site_ et _Renviron.site_ )
-+ Librairies partagées (`.Library.site` dans R et variable d'environnement `R_LIBS_SITE`)
-+ Connexion centralisé aux données (_DNS au niveau système_)
-
-
----
-layout: false
-
-arret
-
----
-
-# Des termes pas habituels
+--- 
+# S'adapter à un contexte technique d'entreprise
 
 .center[
 ```{r, echo = FALSE}
 words <- c("NAS", "LDAP", "ACLv3", "KERBEROS", "ACLv4", "NTLM", "HTTP_PROXY", "Redhat", "PAM", "CLI",
-           "ODBC", "DSN")
+           "ODBC", "DSN", "FreeIPA", "ODBA", "EXADATA", "SSL", "kinit")
 words <- sample(words, size = 30, replace = length(words) < 30)
 freq <- sample(1:50, size = length(words), replace = TRUE)
 wordcloud::wordcloud(words, freq, 
                      colors = RColorBrewer::brewer.pal(6,"Dark2"), random.color = TRUE, rot.per = 0.1)
 ```
 ]
+---
+
+# Quels points clés 
+
+### Gestion des librairies
++ Mirroir CRAN Interne car environement offline
++ Un défi récurrent : Les dépendances systèmes
++ Librairies partagées sur les serveurs (`R_LIBS_SITE`)
+
+### Mise à jour et reproductibilité
++ Version de R multiple
++ Une librairie partagé par version
 
 ---
 
-# Favoriser le déploiement
+# Customisation
 
-+ Environnement "standart" sur réseau interne
+### Simplifier l'utilisation
+
++ Au niveau de R : _Rprofile.site_ et _Renviron.site_
++ AU niveau des configurations RStudio
+
+###  Améliorer l'expérience
++ Connexion centralisé aux données 
++ [Connection contract]()
++ [Addins RStudio]()
++ [Projet template]()
+
+---
+
+# Et à propos de R en production 
+
+### Favoriser le déploiement
+
++ Environnement "standard" sur réseau interne
 + `packrat.lock` généré dans le datalab 
 + `packrat::restore()` pour le déploiement
+
+---
+
+# Ce qui a permis d'avancer
+
+---
+
+# Une communauté R-Admin
+
++ https://community.rstudio.com/c/r-admin
+
+> This category is for discussions about R in production, at scale, and in complex environments.
+
++ Blog Rviews by RStudio : [R for Entreprise](https://rviews.rstudio.com/categories/r-for-the-enterprise/)
+
++ 
