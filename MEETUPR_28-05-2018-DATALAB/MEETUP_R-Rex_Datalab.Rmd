@@ -7,12 +7,14 @@ output:
   xaringan::moon_reader:
     lib_dir: libs
     chakra: libs/remark-latest.min.js
-    css: [default, metropolis]
+    css: [default, custom.css]
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       # beforeInit: "macros.js"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +30,7 @@ options(htmltools.dir.version = FALSE)
   * Formation
   * Déploiement - Mise en production
   * Solutions mutualisées pour les utilisateurs
-  
+
 .box[Mise en place d'un datalab]
 
 ???
@@ -43,8 +45,7 @@ Sujets:
 ---
 
 # R en entreprise
-
-.subtitle[c'est pas comme à la maison]
+.subtitle[C'est pas comme à la maison]
 
 .pull-left[
 **Poste de travail pas toujours adapté**
@@ -77,19 +78,23 @@ Cadre limité
 
 ---
 
-# Les grandes idées d'un Datalab ?
+# Les grandes idées
 
-#### Un environnement mutualisé...
+### Mutualisé
 + Collaboration entre équipes sur des projets
 + Accés aux données l'entreprise
 + Partage de la ressource de calcul
 
-#### ...prêt à l'emploi...
+--
+
+### prêt à l'emploi
 + Juste à se connecter
 + Pas d'installation, pas de configuration
 + Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
 
-#### ...accompagné de service et solutions
+--
+
+### accompagné de service et solutions
 + Intégration à d'autres solutions
 + Packages Internes
 + Support / Expertise 
@@ -122,7 +127,9 @@ Excel ++
 
 ---
 
-# Solution interne en mode serveurs
+# Mis en place 
+
+.subtitle[Solution interne en mode serveurs]
 
 .center[
 
@@ -145,54 +152,106 @@ cat(readLines("draw-io_embded.txt"))
 
 Lien vers présentation Benoit lors de sa conf
 
---- 
-# S'adapter à un contexte technique d'entreprise
+---
+
+# Admin R ?
+.subtitle[S'adapter à un contexte technique d'entreprise]
 
 .center[
-```{r, echo = FALSE}
+```{r echo=FALSE, fig.height=5, fig.width=5}
+set.seed(9456)
 words <- c("NAS", "LDAP", "ACLv3", "KERBEROS", "ACLv4", "NTLM", "HTTP_PROXY", "Redhat", "PAM", "CLI",
-           "ODBC", "DSN", "FreeIPA", "ODBA", "EXADATA", "SSL", "kinit")
-words <- sample(words, size = 30, replace = length(words) < 30)
+           "ODBC", "DSN", "FreeIPA", "ODBA", "EXADATA", "SSL", "kinit", "Datacenter", "API", 
+           "odbc.ini", "Rprofile.site", "Proxy", "Parquet", "Hive", "Impala", "Oracle")
+# words <- sample(words, size = 30, replace = length(words) < 30)
 freq <- sample(1:50, size = length(words), replace = TRUE)
 wordcloud::wordcloud(words, freq, 
-                     colors = RColorBrewer::brewer.pal(6,"Dark2"), random.color = TRUE, rot.per = 0.1)
+                     colors = RColorBrewer::brewer.pal(6,"Dark2"), 
+                     random.color = TRUE, rot.per = 0.2,
+                     scale =c(4, 1.5))
 ```
 ]
 ---
+layout: true
+# Retour d'expérience 
+---
 
-# Quels points clés 
-
+.left-column[
 ### Gestion des librairies
-+ Mirroir CRAN Interne car environement offline
-+ Un défi récurrent : Les dépendances systèmes
-+ Librairies partagées sur les serveurs (`R_LIBS_SITE`)
+]
 
-### Mise à jour et reproductibilité
-+ Version de R multiple
-+ Une librairie partagé par version
+.right-column[
+
+Mirroir CRAN interne car environnement offline
+
+Défi des dépendances systèmes  
+(`sysreq` by RHub à la rescousse)
+
+Librairies partagées sur les serveurs (`R_LIBS_SITE`)
+
+Dépot de package interne
+
+Solution spécifique à R ou même solutions que les autres languages ?
+]
 
 ---
 
-# Customisation
+.left-column[
+### Gestion des librairies
+### Facilité par RStudio
+]
 
+.right-column[
+Multiple version de R
+
+Multi-session
+
+Authentification
+
+Monitoring des environnements
+
+Configuration de serveur
+
+Connectivité aux sources de données
+]
+
+
+
+---
+
+.left-column[
+### Gestion des librairies
+### Facilité par RStudio
+### Customisation
+]
+
+.right-column[
 ### Simplifier l'utilisation
 
-+ Au niveau de R : _Rprofile.site_ et _Renviron.site_
-+ AU niveau des configurations RStudio
++ Au niveau de R : _Rprofile.site_ et _Renviron.site_  
+
++ Au niveau des configurations RStudio
 
 ###  Améliorer l'expérience
 + Connexion centralisé aux données 
+
 + [Connection contract]()
+
 + [Addins RStudio]()
+
 + [Projet template]()
-
+]
 ---
+layout: false
+# Et à propos de R en prod ?
 
-# Et à propos de R en production 
+.subtitle[Favoriser le déploiement]
 
-### Favoriser le déploiement
+### Principalement des apps shiny 
++ Déploiement dans l'environnement de publication du datalab
++ Docker selon les cas (apps complexe et standard de l'entreprise)
 
-+ Environnement "standard" sur réseau interne
+### Packrat à la rescousse
 + `packrat.lock` généré dans le datalab 
 + `packrat::restore()` pour le déploiement
 
