@@ -24,11 +24,11 @@ options(htmltools.dir.version = FALSE)
 # A propos
 
 ### Utilisateurs de `r icon::fa_r_project()` depuis 6 ans
-
+</br>    
 ### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
-
+</br>
 ### Depuis + d'un an, entre autre, en appui autour des sujets/projets `r icon::fa_r_project()` 
-
+</br>    
 .pull-left[
 .center[
 ### `r icon::fa_github()`
