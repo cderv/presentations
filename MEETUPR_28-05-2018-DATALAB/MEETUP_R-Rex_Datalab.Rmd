@@ -175,6 +175,8 @@ wordcloud::wordcloud(words, freq,
 layout: true
 # Retour d'expérience 
 ---
+count:false
+---
 
 .left-column[
 ### Gestion des librairies
@@ -242,31 +244,114 @@ Connectivité aux sources de données
 + [Projet template]()
 ]
 ---
-layout: false
+layout: true
 # Et à propos de R en prod ?
 
 .subtitle[Favoriser le déploiement]
 
-### Principalement des apps shiny 
-+ Déploiement dans l'environnement de publication du datalab
-+ Docker selon les cas (apps complexe et standard de l'entreprise)
+---
+count: false
+---
 
-### Packrat à la rescousse
-+ `packrat.lock` généré dans le datalab 
-+ `packrat::restore()` pour le déploiement
+.left-column[
+### Principalement des apps shiny
+]
+
+.right-column[
++ Environnement de publication du datalab
+  + Facile grâce à RStudio Connect 
+  + app Shiny, dashboard, rapport et présentation 
+
++ Environnement dédié en datacenter
+  + Cas particulier
+  + Revu de l'architecture logiciel
+
++ A venir: Docker
+  + Standard DevOps de l'entreprise
+  + Nécesite adaptation du contexte technique
+]
 
 ---
 
-# Ce qui a permis d'avancer
+.left-column[
+### Principalement des apps shiny
+### {packrat} à la rescousse
+]
+
+.right-column[
+`packrat.lock` généré dans le datalab
+
+```{r, eval = FALSE}
+# Générer uniquement le fichier packrat.lock
+library(packrat)
+.snapshotImpl(project = ".", 
+              snapshot.sources = FALSE)
+```
+
+puis `packrat::restore()` dans l'environnement de déploiement le déploiement. 
+Astuce: un cache packrat pour accélérer le déploiement.
+
+```{r, eval = FALSE}
+library(packrat)
+Sys.setenv(
+  R_PACKRAT_CACHE_DIR = "<global-cache-dir>"
+  )
+set_opts(use.cache = TRUE)
+restore()
+```
+
+] 
 
 ---
 
-# Une communauté R-Admin
+.left-column[
+### Principalement des apps shiny
+### {packrat} à la rescousse
+### {config} pour adapter les configurations
+]
 
-+ https://community.rstudio.com/c/r-admin
+.right-column[
+Un fichier à adapter uniquement : `config.yml`:
+```yaml
+default:
+  db-name: "db-test.acme.com"
+  log-folder: "./local-log-folder"
+  
+production:
+  db-name: "db-prod.acme.com"
+  log-folder: "/mnt/shared-log-folder"
+```
+Le code R n'a pas à être changé:
+```{r, eval = FALSE}
+db_name <- config::get("db-name")
+log-path <- config::get("log-folder")
+```
+
+Dans l'environnement de déploiement
+```{r, eval = FALSE}
+Sys.setenv(R_CONFIG_ACTIVE = "production")
+```
+
+
+]
+
+---
+layout: false
+# De l'appui dans la communauté
+
+--
+
+##  _R Admin_ sur community.rstudio.com
+
+https://community.rstudio.com/c/r-admin
 
 > This category is for discussions about R in production, at scale, and in complex environments.
 
-+ Blog Rviews by RStudio : [R for Entreprise](https://rviews.rstudio.com/categories/r-for-the-enterprise/)
+## _R for Entreprise_ sur le blog RViews
 
-+ 
+https://rviews.rstudio.com/categories/r-for-the-enterprise/)
+
+---
+class: inverse, center, middle, title-slide
+count: false
+## MERCI
