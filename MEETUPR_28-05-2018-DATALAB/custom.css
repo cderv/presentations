@@ -35,6 +35,7 @@ h1, h2, h3 {
   text-align: center;
   color: #777;
   font-size: 35px;
+  margin-bottom:20px;
 }
 
 .remark-code-line-highlighted {

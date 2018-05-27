@@ -22,7 +22,8 @@ options(htmltools.dir.version = FALSE)
 ```
 
 # A propos
-
+.subtitle[Courte introduction]
+</br>
 ### Utilisateurs de `r icon::fa_r_project()` depuis 6 ans
 </br>    
 ### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
