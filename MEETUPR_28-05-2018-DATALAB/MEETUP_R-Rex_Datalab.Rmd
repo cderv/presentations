@@ -2,6 +2,7 @@
 title: "'Datalab' pour R</br>Partage d'experience"
 subtitle: "Meetup R Addicts"
 author: "Christophe Dervieux"
+knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, output_file = "index.html", encoding = "UTF-8")})
 date: "28 mai 2018"
 output:
   xaringan::moon_reader:
