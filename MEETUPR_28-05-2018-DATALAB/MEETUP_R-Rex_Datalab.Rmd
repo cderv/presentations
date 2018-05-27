@@ -1,6 +1,6 @@
 ---
-title: "REX sur la mise en place d'un datalab R à RTE"
-subtitle: "Meetup R Addicts x EDF"
+title: "'Datalab' pour R</br>Partage d'experience"
+subtitle: "Meetup R Addicts"
 author: "Christophe Dervieux"
 date: "28 mai 2018"
 output:
@@ -9,10 +9,10 @@ output:
     chakra: libs/remark-latest.min.js
     css: [default, custom.css]
     nature:
-      highlightStyle: github
+      highlightStyle: zenburn
+      highlightSpans: true
       highlightLines: true
       countIncrementalSlides: false
-      # beforeInit: "macros.js"
 editor_options: 
   chunk_output_type: console
 ---
@@ -23,15 +23,29 @@ options(htmltools.dir.version = FALSE)
 
 # A propos
 
-* Utilisateurs de R depuis 6 ans maintenant
-* RTE (Réseau de Transport d'Electricité)
-* Depuis + d'1 an, en appui autour des sujets/projets R pour les chargés d'études et développeurs
-  * Expertise
-  * Formation
-  * Déploiement - Mise en production
-  * Solutions mutualisées pour les utilisateurs
+### Utilisateurs de `r icon::fa_r_project()` depuis 6 ans
 
-.box[Mise en place d'un datalab]
+### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
+
+### Depuis + d'un an, entre autre, en appui autour des sujets/projets `r icon::fa_r_project()` 
+
+.pull-left[
+.center[
+### `r icon::fa_github()`
+@cderv
+]
+]
+
+.pull-right[
+.center[
+### `r icon::fa_twitter()`
+@chrisderv
+]
+]
+
+.footnote[
+[1] mais cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
+]
 
 ???
 
@@ -44,26 +58,32 @@ Sujets:
 
 ---
 
-# R en entreprise
+# `r icon::fa_r_project()` en entreprise
 .subtitle[C'est pas comme à la maison]
 
 .pull-left[
-**Poste de travail pas toujours adapté**
+### Poste de travail </br> pas toujours adapté
 + Pas son poste perso
+
 + Offre bureautique, non scientifique
-+ Sécurité : Je ne peux pas vraiment faire ce que je veux (Proxy, non admin, ...)
+
++ Sécurité = Limitation</br>(Proxy, non admin, ...)
 ]
 
 .pull-right[
-**Cadre technique de l'entreprise contraignant**
-+ Respect d'un cadre technique pour le déploiement d'application en production
-+ R non connu et référencé dans _les technologies validées_
-+ Pas de solution de type cloud à disposition
+### Cadre technique de l'entreprise contraignant
++ Règle pour le déploiement d'application en production
+
++ `r icon::fa_github()` non référencé dans _les technologies validées_
+
++ Pas (encore ?) de cloud à disposition
 ]
 
+.box[
 .center[ 
 **Comment améliorer le cadre de travail ?**  
-**Contribuer à la transformation numérique de l'entreprise**
+**Contribuer à la transformation numérique de l'entreprise ?** 
+]
 ]
 
 ???
@@ -80,6 +100,8 @@ Cadre limité
 
 # Les grandes idées
 
+.subtitle[pour un 'datalab']
+
 ### Mutualisé
 + Collaboration entre équipes sur des projets
 + Accés aux données l'entreprise
@@ -87,17 +109,17 @@ Cadre limité
 
 --
 
-### prêt à l'emploi
+### Prêt à l'emploi
 + Juste à se connecter
 + Pas d'installation, pas de configuration
-+ Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
++ Permettre à des débutants d'utiliser `r icon::fa_r_project()` comme un outil de manipulation de donnée avancée
 
 --
 
-### accompagné de service et solutions
-+ Intégration à d'autres solutions
-+ Packages Internes
-+ Support / Expertise 
+### Accompagné de services et solutions
++ Intégrer à d'autres solutions
++ Favoriser les packages internes adapté au cadre de l'entreprise
++ Offrir support & expertise 
 
 ???
 
@@ -113,18 +135,6 @@ Avantage:
 
 Excel ++
 
-**Mutualisé**: 
-+ Favoriser la collaboration entre équipes sur des projets
-+ Pouvoir accéder à des données centralisées (DataLake, DataWareHouse, ...)
-+ Partager la ressource de calcul
-
-**Prêt à l'emploi**:
-+ Juste à se connecter, pas d'installation à faire, de version à gérer
-+ Permettre à des débutants d'utiliser R comme un outil de manipulation de donnée
-
-**Service en interne**:
-+ Pleins de possibilités sur le web (shinyapps.io, Rpubs, Github, Github pages, Travis, ...). Et en interne ?
-
 ---
 
 # Mis en place 
@@ -137,20 +147,16 @@ Excel ++
 cat(readLines("draw-io_embded.txt"))
 ```
 
-**En constante évolution**  
-**Objectif: mettre R au coeur des usages pour la donnée**
-
+### En constante évolution
 ]
 
 ???
 
 + 2 serveurs Rstudio Pro en cluster
-+ 1 sereurs RStudio Connect
++ 1 serveur RStudio Connect
 + Un miroir interne du CRAN, avec possibilité de publier des packages internes
 + Accès à "l'usine de développement" (Gitlab, Jenkins, Nexus, SonarQube)
 + Accès aux données de l'entreprise
-
-Lien vers présentation Benoit lors de sa conf
 
 ---
 
@@ -174,6 +180,7 @@ wordcloud::wordcloud(words, freq,
 ---
 layout: true
 # Retour d'expérience 
+.subtitle[et réflexions...]
 ---
 count:false
 ---
@@ -184,40 +191,41 @@ count:false
 
 .right-column[
 
-Mirroir CRAN interne car environnement offline
+* Mirroir CRAN interne car environnement offline
 
-Défi des dépendances systèmes  
-(`sysreq` by RHub à la rescousse)
+* Défi des dépendances systèmes </br>(Service [`sysreqs`](https://sysreqs.r-hub.io/) by RHub à la rescousse)
 
-Librairies partagées sur les serveurs (`R_LIBS_SITE`)
+* Librairies partagées sur les serveurs (`R_LIBS_SITE`)
 
-Dépot de package interne
-
-Solution spécifique à R ou même solutions que les autres languages ?
+* Dépot de package interne
+.center[
+.color1[**Solution spécifique à `r icon::fa_r_project()` ou même solution<br>que les autres languages ?**]
 ]
-
+]
 ---
 
 .left-column[
 ### Gestion des librairies
-### Facilité par RStudio
+### Facilité par RStudio pro
 ]
 
 .right-column[
-Multiple version de R
+* .color1[Multiple versions] de R
 
-Multi-session
+* .color1[Multi-sessions] pour les utilisateurs
 
-Authentification
+* .color1[Authentification] d'entreprise
 
-Monitoring des environnements
+* .color1[Monitoring] des environnements
 
-Configuration de serveur
+* .color1[Configuration de sessions R] pour le serveur
 
-Connectivité aux sources de données
+* Connectivité aux .color1[sources de données] facilitée
+
+* .color1[Load Balancing]
+
+* .color1[**Support**]
 ]
-
-
 
 ---
 
@@ -230,22 +238,25 @@ Connectivité aux sources de données
 .right-column[
 ### Simplifier l'utilisation
 
-+ Au niveau de R : _Rprofile.site_ et _Renviron.site_  
-
++ Au niveau de `r icon::fa_r_project()` : _Rprofile.site_ et _Renviron.site_  
 + Au niveau des configurations RStudio
 
 ###  Améliorer l'expérience
-+ Connexion centralisé aux données 
 
-+ [Connection contract]()
++ Centralisation des accès aux données</br>(DSN, Kerberos, ...) 
++ Adapter l'onglet _connections_</br>
+([Connection contract](https://db.rstudio.com/advanced/contract))
++ Ajouter des fonctionnalités dans le contexte RTE </br>
+( [Addins RStudio](https://rstudio.github.io/rstudio-extensions/rstudio_addins.html), [RStudio API](https://rstudio.github.io/rstudio-extensions/rstudioapi.html), [Snippet](https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html))
++ .color1[**Template** interne]</br>([Projet template](https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html), [Rmarkdown templates](https://rstudio.github.io/rstudio-extensions/rmarkdown_templates.html))
 
-+ [Addins RStudio]()
+.center[_https://rstudio.github.io/rstudio-extensions_]
 
-+ [Projet template]()
 ]
+
 ---
 layout: true
-# Et à propos de R en prod ?
+# Et à propos de `r icon::fa_r_project()` en prod ?
 
 .subtitle[Favoriser le déploiement]
 
@@ -259,16 +270,16 @@ count: false
 
 .right-column[
 + Environnement de publication du datalab
-  + Facile grâce à RStudio Connect 
+  + Facile grâce à .color1[RStudio Connect]
   + app Shiny, dashboard, rapport et présentation 
 
 + Environnement dédié en datacenter
-  + Cas particulier
-  + Revu de l'architecture logiciel
+  + Cas particuliers
+  + Demande de revoir la conception
 
-+ A venir: Docker
++ Docker ?
   + Standard DevOps de l'entreprise
-  + Nécesite adaptation du contexte technique
+  + Nécesite une adaptation du contexte technique
 ]
 
 ---
@@ -281,24 +292,25 @@ count: false
 .right-column[
 `packrat.lock` généré dans le datalab
 
-```{r, eval = FALSE}
+```r
 # Générer uniquement le fichier packrat.lock
 library(packrat)
 .snapshotImpl(project = ".", 
-              snapshot.sources = FALSE)
+*              snapshot.sources = FALSE)
 ```
 
-puis `packrat::restore()` dans l'environnement de déploiement le déploiement. 
-Astuce: un cache packrat pour accélérer le déploiement.
+* `packrat::restore()` dans l'environnement de déploiement le déploiement.
 
-```{r, eval = FALSE}
+```r
 library(packrat)
 Sys.setenv(
   R_PACKRAT_CACHE_DIR = "<global-cache-dir>"
-  )
+)
 set_opts(use.cache = TRUE)
 restore()
 ```
+.color1[Astuce]: un cache packrat pour accélérer le déploiement.
+
 
 ] 
 
@@ -307,28 +319,31 @@ restore()
 .left-column[
 ### Principalement des apps shiny
 ### {packrat} à la rescousse
-### {config} pour adapter les configurations
+### {config} pour adapter les configurations entre environnements
 ]
 
 .right-column[
-Un fichier à adapter uniquement : `config.yml`:
+* Un seul fichier à adapter uniquement : `config.yml`:
+
 ```yaml
 default:
   db-name: "db-test.acme.com"
   log-folder: "./local-log-folder"
   
-production:
+*production:
   db-name: "db-prod.acme.com"
   log-folder: "/mnt/shared-log-folder"
 ```
-Le code R n'a pas à être changé:
-```{r, eval = FALSE}
+* Le code R n'a pas à être changé:
+
+```r
 db_name <- config::get("db-name")
 log-path <- config::get("log-folder")
 ```
 
-Dans l'environnement de déploiement
-```{r, eval = FALSE}
+* Dans l'environnement de déploiement
+
+```r
 Sys.setenv(R_CONFIG_ACTIVE = "production")
 ```
 
@@ -338,20 +353,26 @@ Sys.setenv(R_CONFIG_ACTIVE = "production")
 ---
 layout: false
 # De l'appui dans la communauté
+.subtitle[Où trouver de l'aide]
 
---
-
-##  _R Admin_ sur community.rstudio.com
+###  _R Admin_ sur community.rstudio.com
 
 https://community.rstudio.com/c/r-admin
 
 > This category is for discussions about R in production, at scale, and in complex environments.
 
-## _R for Entreprise_ sur le blog RViews
+### _R for Entreprise_ sur le blog RViews
 
-https://rviews.rstudio.com/categories/r-for-the-enterprise/)
+https://rviews.rstudio.com/categories/r-for-the-enterprise/
++ [Some Ideas for your Internal R Package](https://rviews.rstudio.com/2017/07/19/supporting-corporate-r-user-groups/)
++ [Enterprise Dashboards with R Markdown](https://rviews.rstudio.com/2018/05/16/replacing-excel-reports-with-r-markdown-and-shiny/)
+
+### S'entraider entre francophone
+
+Une communauté slack francophone : https://frama.link/r-grrr
+
 
 ---
 class: inverse, center, middle, title-slide
 count: false
-## MERCI
+# MERCI
