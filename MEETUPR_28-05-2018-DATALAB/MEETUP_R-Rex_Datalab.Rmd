@@ -180,9 +180,9 @@ wordcloud::wordcloud(words, freq,
 ```
 ]
 
-.footnote[
-[The R Admin is rad: A guide to professional R tooling and integration](https://www.rstudio.com/resources/videos/the-r-admin-is-rad-a-guide-to-professional-r-tooling-and-integration/) ( _rstudio::conf2018_ talk )
-]
+>  The R admin bridges the divide between IT operations and data science teams. 
+
+[The R Admin is rad: A guide to professional R tooling and integration](https://www.rstudio.com/resources/videos/the-r-admin-is-rad-a-guide-to-professional-r-tooling-and-integration/) ( _rstudio::conf2018_ )
 
 ---
 layout: true
