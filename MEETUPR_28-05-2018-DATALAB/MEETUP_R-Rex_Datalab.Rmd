@@ -29,7 +29,7 @@ options(htmltools.dir.version = FALSE)
 </br>    
 ### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
 </br>
-### Depuis + d'un an, entre autre, en appui autour des sujets/projets `r icon::fa_r_project()` 
+### Depuis + d'un an, entre autres, en appui autour des sujets/projets `r icon::fa_r_project()` 
 </br>    
 .pull-left[
 .center[
@@ -76,11 +76,12 @@ Sujets:
 ### Cadre technique de l'entreprise contraignant
 + Règle pour le déploiement d'application en production
 
-+ `r icon::fa_github()` non référencé dans _les technologies validées_
++ `r icon::fa_r_project()` non référencé dans _les technologies validées_
 
 + Pas (encore ?) de cloud à disposition
 ]
-
+</br>
+</br>
 .box[
 .center[ 
 **Comment améliorer le cadre de travail ?**  
@@ -204,16 +205,21 @@ count:false
 
 * Librairies partagées sur les serveurs (`R_LIBS_SITE`)
 
-* Dépôt de package interne
+* Dépôt de packages internes
+</br>
+</br>
 .center[
-.color1[**Solution spécifique à `r icon::fa_r_project()` ou même solution<br>que les autres languages ?**]
+.color1[**Solution spécifique à `r icon::fa_r_project()` ou</br>même solution que les autres languages ?**]
+</br>
+</br>
+.color1[**Quelles règles de gestions pour les mises à jour ?**]
 ]
 ]
 ---
 
 .left-column[
 ### Gestion des librairies
-### Facilité par RStudio pro
+### Intérêt de RStudio pro
 ]
 
 .right-column[
@@ -238,7 +244,7 @@ count:false
 
 .left-column[
 ### Gestion des librairies
-### Facilité par RStudio
+### Intérêt de RStudio pro
 ### Customisation
 ]
 
@@ -261,6 +267,10 @@ count:false
 
 ]
 
+???
+
+Example stringi / R Oracle
+Cran par default, etc...
 ---
 layout: true
 # Et à propos de `r icon::fa_r_project()` en prod ?
@@ -285,7 +295,7 @@ count: false
   + Demande de revoir la conception
 
 + Docker ?
-  + Standard DevOps de l'entreprise
+  + .color1[Standard DevOps] de l'entreprise
   + Nécessite une adaptation du contexte technique
 ]
 
@@ -297,7 +307,7 @@ count: false
 ]
 
 .right-column[
-`packrat.lock` généré dans le datalab
+* `packrat.lock` généré dans le datalab
 
 ```r
 # Générer uniquement le fichier packrat.lock

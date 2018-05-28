@@ -29,7 +29,7 @@ class: center, middle, inverse, title-slide
 &lt;/br&gt;    
 ### &lt;img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"&gt; RTE (Réseau de Transport d'Electricité)&lt;sup&gt;1&lt;/sup&gt; 
 &lt;/br&gt;
-### Depuis + d'un an, entre autre, en appui autour des sujets/projets <i class="fab  fa-r-project "></i> 
+### Depuis + d'un an, entre autres, en appui autour des sujets/projets <i class="fab  fa-r-project "></i> 
 &lt;/br&gt;    
 .pull-left[
 .center[
@@ -76,11 +76,12 @@ Sujets:
 ### Cadre technique de l'entreprise contraignant
 + Règle pour le déploiement d'application en production
 
-+ <i class="fab  fa-github "></i> non référencé dans _les technologies validées_
++ <i class="fab  fa-r-project "></i> non référencé dans _les technologies validées_
 
 + Pas (encore ?) de cloud à disposition
 ]
-
+&lt;/br&gt;
+&lt;/br&gt;
 .box[
 .center[ 
 **Comment améliorer le cadre de travail ?**  
@@ -191,16 +192,21 @@ count:false
 
 * Librairies partagées sur les serveurs (`R_LIBS_SITE`)
 
-* Dépôt de package interne
+* Dépôt de packages internes
+&lt;/br&gt;
+&lt;/br&gt;
 .center[
-.color1[**Solution spécifique à <i class="fab  fa-r-project "></i> ou même solution&lt;br&gt;que les autres languages ?**]
+.color1[**Solution spécifique à <i class="fab  fa-r-project "></i> ou&lt;/br&gt;même solution que les autres languages ?**]
+&lt;/br&gt;
+&lt;/br&gt;
+.color1[**Quelles règles de gestions pour les mises à jour ?**]
 ]
 ]
 ---
 
 .left-column[
 ### Gestion des librairies
-### Facilité par RStudio pro
+### Intérêt de RStudio pro
 ]
 
 .right-column[
@@ -225,7 +231,7 @@ count:false
 
 .left-column[
 ### Gestion des librairies
-### Facilité par RStudio
+### Intérêt de RStudio pro
 ### Customisation
 ]
 
@@ -248,6 +254,10 @@ count:false
 
 ]
 
+???
+
+Example stringi / R Oracle
+Cran par default, etc...
 ---
 layout: true
 # Et à propos de <i class="fab  fa-r-project "></i> en prod ?
@@ -272,7 +282,7 @@ count: false
   + Demande de revoir la conception
 
 + Docker ?
-  + Standard DevOps de l'entreprise
+  + .color1[Standard DevOps] de l'entreprise
   + Nécessite une adaptation du contexte technique
 ]
 
@@ -284,7 +294,7 @@ count: false
 ]
 
 .right-column[
-`packrat.lock` généré dans le datalab
+* `packrat.lock` généré dans le datalab
 
 ```r
 # Générer uniquement le fichier packrat.lock
