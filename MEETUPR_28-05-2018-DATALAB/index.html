@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>‘Datalab’ pour RPartage d’expérience</title>
+    <title>Datalab pour RPartage d’expérience</title>
     <meta charset="utf-8">
     <meta name="author" content="Christophe Dervieux" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -263,9 +263,35 @@ layout: true
 # Et à propos de <i class="fab  fa-r-project "></i> en prod ?
 
 .subtitle[Favoriser le déploiement]
-
 ---
 count: false
+### Utilité du Datalab ?
+
+---
+
+### Utilité du Datalab ?
+
+.center[
+![](Bitcoin_example.PNG)&lt;!-- --&gt;
+.right[_Source: [R Admin - Talk rstudio::conf2018](https://github.com/nwstephens/r-admin-2018/blob/master/R-Admin-2018.pdf)_     
+]
+]
+
+---
+
+### Utilité du Datalab ?
+
+&lt;img src="Dev-Test-Prod.PNG" width="1116" /&gt;
+
+.right[_Source: [R Admin - Talk rstudio::conf2018](https://github.com/nwstephens/r-admin-2018/blob/master/R-Admin-2018.pdf)_
+]
+
+---
+layout: true
+# Et à propos de <i class="fab  fa-r-project "></i> en prod ?
+
+.subtitle[Aujourd'hui à RTE]
+
 ---
 
 .left-column[
@@ -308,13 +334,14 @@ library(packrat)
 ```r
 library(packrat)
 Sys.setenv(
-  R_PACKRAT_CACHE_DIR = "&lt;global-cache-dir&gt;"
+  R_PACKRAT_CACHE_DIR = "&lt;global-cache&gt;",
+  R_PACKRAT_SRC_DIR = "&lt;global-src&gt;"
 )
-set_opts(use.cache = TRUE)
+set_opts(use.cache = TRUE, persit = FALSE)
 restore()
+packify() # packrat::on() automatique
 ```
 .color1[Astuce]: un cache packrat pour accélérer le déploiement.
-
 
 ] 
 
@@ -323,7 +350,7 @@ restore()
 .left-column[
 ### Principalement des apps shiny
 ### {packrat} à la rescousse
-### {config} pour adapter les configurations entre environnements
+### {config} pour adapter entre environnements
 ]
 
 .right-column[
@@ -363,16 +390,16 @@ layout: false
 
 https://community.rstudio.com/c/r-admin
 
-&gt; This category is for discussions about R in production, at scale, and in complex environments.
+&gt; This category is for discussions about .color1[R in production], at scale, and in .color1[complex environments].
 
 ### _R for Entreprise_ sur le blog RViews
 
 https://rviews.rstudio.com/categories/r-for-the-enterprise/
-+ [[Analytics Administration for R](https://rviews.rstudio.com/2017/06/21/analytics-administration-for-r/)]
++ [Analytics Administration for R](https://rviews.rstudio.com/2017/06/21/analytics-administration-for-r/)
 + [Some Ideas for your Internal R Package](https://rviews.rstudio.com/2017/07/19/supporting-corporate-r-user-groups/)
 + [Enterprise Dashboards with R Markdown](https://rviews.rstudio.com/2018/05/16/replacing-excel-reports-with-r-markdown-and-shiny/)
 
-### S'entraider entre francophone
+### S'entraider entre francophone ?
 
 Une communauté slack francophone : https://frama.link/r-grrr
 

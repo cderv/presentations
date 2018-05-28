@@ -55,13 +55,13 @@ h1, h2, h3 {
 /* Two-column layout */
 .left-column {
   color: #777;
-  width: 30%;
+  width: 25%;
   height: 92%;
   float: left;
 }
 
 .left-column h2, .left-column h3 {
-  font-size:35;
+  font-size:30px;
   color: #777;
 }
 
