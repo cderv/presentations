@@ -46,7 +46,7 @@ options(htmltools.dir.version = FALSE)
 ]
 
 .footnote[
-[1] mais cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
+[1] cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
 ]
 
 ???
