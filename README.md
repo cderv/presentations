@@ -1,7 +1,7 @@
 # Centralized Presentations
 
 This repo contains presentations I made in several places. 
-These presentations are available through `https://cderv.github.io/presentations/<FOLDER_NAME>
+These presentations are available through `https://cderv.github.io/presentations/<FOLDER_NAME>`
 
 ## Currently Online
 
