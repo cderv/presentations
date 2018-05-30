@@ -1,5 +1,5 @@
 ---
-title: "'Datalab' pour R</br>Partage d'expérience"
+title: "'Datalab' pour R </br>Partage d'expérience"
 subtitle: "Meetup R Addicts"
 author: "Christophe Dervieux"
 knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, output_file = "index.html", encoding = "UTF-8")})
