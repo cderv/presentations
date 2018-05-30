@@ -49,7 +49,7 @@ options(htmltools.dir.version = FALSE)
 [1] cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
 ]
 
-??? 
+???
 
 License:
 CC BY-SA 4.0
