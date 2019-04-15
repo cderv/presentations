@@ -1,0 +1,58 @@
+---
+title: "Pagedown pour de belles publications PDF avec HTML et CSS"
+subtitle: "Meetup R Addicts"
+author: "Christophe Dervieux"
+knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, output_file = "index.html", encoding = "UTF-8")})
+date: "18 avril 2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: [default, custom.css]
+    nature:
+      highlightStyle: zenburn
+      highlightSpans: true
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# A propos
+.subtitle[Courte introduction]
+</br>
+### Utilisateur de `r icon::fa_r_project()` depuis 7 ans
+</br>    
+### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
+</br>
+### Contributeur actif dans la communauté. Différents projets en cours (`r icon::ii("cube")` crrri, `r icon::fa_book()` Rmarkdown Cookbook). 
+</br>    
+.pull-left[
+.center[
+### `r icon::fa_github()`
+@cderv
+]
+]
+
+.pull-right[
+.center[
+### `r icon::fa_twitter()`
+@chrisderv
+]
+]
+
+.footnote[
+[1] cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
+]
+
+???
+
+License:
+CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0/
+
+---
