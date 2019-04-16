@@ -1,5 +1,6 @@
 p, pre {
     font-size: 140%;
+    margin-top: 0.2em;
 }
 
 /*
@@ -93,7 +94,7 @@ h1, h2, h3 {
 .right-column {
   width: 65%;
   float: right;
-  padding-top: 1em;
+  padding-top: 0em;
 }
 
 /* box */
