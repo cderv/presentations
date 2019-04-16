@@ -87,22 +87,19 @@ https://creativecommons.org/licenses/by-sa/4.0/
 
 Suite au concours, une collaboration Yihui Xie et Romain Lesur 
 
-</br>
+.box[.color1[Permettre la création de documents ** mise en page pour publication pdf** en HTML et CSS]]
 
-Version 0.2 sur le CRAN : Experimental `r icon::fa_exclamation_circle()`  
+Version 0.2 sur le CRAN  `r icon::fa_exclamation_circle()` Experimental   
 
-</br>
-
-Préférer une installation depuis `r icon::fa_github()`
+Préférer une installation depuis `r icon::fa_github()` pour les dernières nouveautés et corrections
 
 ```r
 remotes::install_github('rstudio/pagedown')
 ```
 
-Nécessite **Pandoc > 2** - RStudio 1.2 vient avec. (Sortie début Avril)
+Nécessite **Pandoc > 2** - inclut dans RStudio > 1.2 (Release début Avril)
 
-</br>  
-Pour voir le résultat: Google Chrome ou Chromium recommandé.
+Pour voir le résultat: Google Chrome ou Chromium
 
 
 ---
@@ -186,7 +183,7 @@ layout: true
 .subtitle[CSS Paged Media & paged.js]
 ---
 .left-column[
-### CSS for Paged MediaStandard 
+### Le standard CSS for Paged Media
 ]
 .right-column[
 CSS for Paged Media standard est un bout de la norme CSS W3C: 
@@ -201,6 +198,7 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 ---
 .left-column[
 ### Le standard CSS for Paged Media 
+### Le modèle Page
 ]
 
 .right-column[
@@ -221,6 +219,7 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 .left-column[
 ### Le standard CSS for Paged Media 
 ### Le modèle Page
+### Les "Margin Box"
 ]
 
 .right-column[
@@ -462,6 +461,8 @@ layout: false
 * Le projet Paged.js : https://www.pagedmedia.org/paged-js/
 * [Print css rocks](https://print-css.rocks/) website by Andreas Jung
 * [Introduction to CSS for Paged Media](http://www.xmlprague.cz/wp-content/uploads/www.xmlprague.cz/2018/02/CSS-Print.pdf) .small[(Tony Graham, Antenna House - XMLPrague 2018 Conference)]
+
+--
 
 ### Où trouver de l'aide ?
 
