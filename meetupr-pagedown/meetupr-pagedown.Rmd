@@ -200,8 +200,7 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 ]
 ---
 .left-column[
-### CSS for Paged MediaStandard 
-### The Page Model
+### Le standard CSS for Paged Media 
 ]
 
 .right-column[
@@ -220,9 +219,8 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 
 ---
 .left-column[
-### CSS for Paged MediaStandard 
-### The Page Model
-### Margin Box
+### Le standard CSS for Paged Media 
+### Le modèle Page
 ]
 
 .right-column[
@@ -233,10 +231,11 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 * Dans chaque boite, des règles CSS classiques
 ]
 ---
+
 .left-column[
-### CSS for Paged MediaStandard 
-### The Page Model
-### Margin Box
+### Le standard CSS for Paged Media 
+### Le modèle Page
+### Les "Margin Box"
 ]
 .right-column[
 
@@ -292,5 +291,179 @@ table {
 ```
 ]
 ---
+layout: true
+# Comment produire des PDF ?
+.subtitle[CSS paged media via pagedown]
+---
+
+.left-column[
+### Utiliser les templates pagedown
+]
+
+.right-column[
+
+```r
+title: "A Multi-page HTML Document"
+author: "Yihui Xie and Romain Lesur"
+date: "`r Sys.Date()`"
+output:
+*  pagedown::html_paged:
+    toc: true
+    number_sections: false
+```
+
+Consulter la documentation pour les différentes options de chaque format
+]
+
+---
+.left-column[
+### Utiliser les templates pagedown
+### Prévisualiser le document
+]
+
+.right-column[
+Comme le rendu HTML fait appel du Javascript et du CSS, il faut prévisualiser avec un serveur web local ou distant.<sup>1</sup>  
+
+Depuis R, la "magie" de xaringan pour nous aider: 
+
+```r
+# prévisuliser avec un server local 
+# le document Rmd
+xaringan::inf_mr("your-document.Rmd")
+# le document actif dans RStudio
+xaringan::inf_mr()
+```
+ou utiliser l'Addin [Infinite Moon Reader](https://bookdown.org/yihui/rmarkdown/xaringan-preview.html)
+]
+
+.footnote[(1) pas de connexion en _file://_ mais en _http://_]
+---
+.left-column[
+### Utiliser les templates pagedown
+### Prévisualiser le document
+### Impression PDF
+]
+
+.right-column[
+
+.color1[Le plus simple:] Utiliser la fonction Print PDF de Chrome quand la page est chargée.
+
+.color1[Le plus automatisé:] Une fonction speciale `pagedown::chrome_print` pour lancer l'impression chrome depuis R<sup>1</sup>:
+
+```r
+# le html
+pagedown::chrome_print("output.html")
+# le Rmd qui sera compilé avant impression
+pagedown::chrome_print("mondocument.Rmd")
+```
+
+Cette fonction peut ou pas fonctionner. 
+L'impression automatisée est compliqué et doit être améliorés.
+.small[(prise en compte de tous les htmlwidget, interactions javascript, délais avant impression, ...)]
+
+]
+.footnote[
+(1) Pour aller plus loin dans le contrôle de chrome depuis R, allez voir [crrri](https://github.com/RLesur/crrri), package en developpement pour interfacer chrome et R.
+]
+---
+.left-column[
+### Utiliser les templates pagedown
+### Prévisualiser le document
+### Impression PDF
+]
+
+.right-column[
+
+Elle peut aussi servir à d'autres types d'impression:
+
+* Screenshot d'une page entière .small[(`format = 'png'`)]
+
+```r
+pagedown::chrome_print(
+    'https://pagedown.rbind.io/poster-relaxed', 
+    format = 'png')
+```
+.center[
+![:scale 70%](https://user-images.githubusercontent.com/19177171/53675992-fdac4100-3c9c-11e9-9d41-ca50ef4006ca.png)
+]
+]
+---
+.left-column[
+### Utiliser les templates pagedown
+### Prévisualiser le document
+### Impression PDF
+]
+
+.right-column[
+
+Elle peut aussi servir à d'autres types d'impression:
+
+* Screenshot d'un élement de la page .small[(`selector = '#authors'`)]
+
+```r
+pagedown::chrome_print(
+    'https://pagedown.rbind.io/poster-relaxed', 
+    format = 'png',
+    selector = '#authors') 
+```
+.center[
+![:scale 70%](https://user-images.githubusercontent.com/19177171/53676017-63003200-3c9d-11e9-9d96-6bdc2b60ce43.png)
+]
+]
+---
+.left-column[
+### Utiliser les templates pagedown
+### Prévisualiser le document
+### Impression PDF
+### Customiser
+]
+
+.right-column[
+
+### CSS, CSS, CSS !!
+
+* Modifier les règles CSS par un nouveau document
+
+```r
+output:
+  pagedown::html_paged: 
+    css: ["my-fonts.css", "default-page", "default"]
+```
+
+* Modifier par pages et par marges
+
+### Modifier ou Ajouter des templates
+
+* Maitre Jedi du CSS ! 
+* Template HTML pandoc : Un sujet à part entière ! 
+
+.box[
+.small[Volontaires ? S'inspirer des exemples dans Pagedown]
+]
+
+
+]
+
+---
 layout: false
-# Comment modifier les templates ? 
+# Ressources
+.subtitle[</br>]
+
+### Sur pagedown
+
+* Talk sur Pagedown par Yihui Xie à RStudio Conf 2019 ([Video](https://resources.rstudio.com/rstudio-conf-2019/pagedown-creating-beautiful-pdfs-with-r-markdown-and-css), [slides](https://slides.yihui.name/2019-rstudio-conf-pagedown.html)) par Romain Lesur
+* [Reproducible Corporate Publications with `r icon::fa_r_project()`](https://rlesur.gitlab.io/statcanrug/slides.pdf)
+* le dépot `r icon::fa_github()` : https://github.com/rstudio/pagedown 
+
+--
+
+### Sur Paged.js et Paged Media
+
+* Le projet Paged.js : https://www.pagedmedia.org/paged-js/
+* [Print css rocks](https://print-css.rocks/) website by Andreas Jung
+* [Introduction to CSS for Paged Media](http://www.xmlprague.cz/wp-content/uploads/www.xmlprague.cz/2018/02/CSS-Print.pdf) .small[(Tony Graham, Antenna House - XMLPrague 2018 Conference)]
+
+### Où trouver de l'aide ?
+
+* Sur la communauté slack francophone (https://frama.link/r-grrr), demandez @Romain Lesur et les testeurs qui ont déjà fait des supers documents.
+* Sur les issues du `r icon::fa_github()`
