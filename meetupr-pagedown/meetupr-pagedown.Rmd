@@ -29,7 +29,7 @@ options(htmltools.dir.version = FALSE)
 </br>    
 ### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
 </br>
-### Contributeur actif dans la communauté. Différents projets en cours (`r icon::ii("cube")` crrri, `r icon::fa_book()` Rmarkdown Cookbook). 
+### R admin, developer advocate. En appui des projets et des utilisateurs. 
 </br>    
 .pull-left[
 .center[
@@ -54,5 +54,9 @@ options(htmltools.dir.version = FALSE)
 License:
 CC BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0/
+
+---
+# Une idée française
+
 
 ---
