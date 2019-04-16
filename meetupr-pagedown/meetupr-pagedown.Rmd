@@ -59,9 +59,9 @@ https://creativecommons.org/licenses/by-sa/4.0/
 ---
 # Rmarkdown pour produire des PDF... mais sans Latex
 .subtitle[Une idée farfelue ?]
-
+--
 .center[
-![:scale 150%](img/Bookdown-contest-pulpdown.png)
+![:scale 100%](img/Bookdown-contest-pulpdown.png)
 ]
 
 ---
@@ -120,7 +120,7 @@ De nombreux templates disponibles !
 
 ---
 layout:true
-# Template inclus
+# Templates inclus
 .subtitle[A réutiliser ou pour modèle]
 ---
 
@@ -150,12 +150,147 @@ https://pagedown.rbind.io/
 
 .color1[Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedown::poster_relaxed`)] .small[https://pagedown.rbind.io/poster-relaxed]
 
-![:scale 85%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
+![:scale 60%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
+
+.small[Full CSS ici - la mise en forme est faite totalement en CSS]
+---
+
+.color1[Livre "à la bookdown" (`pagedown::book_crc`)]
+![:scale 90%](https://user-images.githubusercontent.com/163582/51346450-4b5d4900-1a63-11e9-8f22-dc632ab0b06b.png)
 
 ---
 layout: false
-
 # Des exemples dans la nature ? 
-
+--
 <iframe src="https://rlesur.gitlab.io/statcanrug/slides.pdf" width="900" height="500" style="border: none;"></iframe>
 [Reproducible Corporate Publications with R](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur
+---
+# Rendu possible par Paged.js
+.subtitle[Une librairie open-source pour</br>paginer des contenus dans un navigateur]
+
+[Paged.js](https://www.pagedmedia.org/paged-js/), c'est un .color1[**Polyfill**]
+> Un polyfill, c’est simple. C’est un ensemble de fonctions permettant de simuler, sur un navigateur web ancien, des fonctionnalités qui ne sont pas nativement disponible. <sup>1</sup>
+
+Ici, _Paged.js_ vient rendre disponibles les spécifications W3C sur [Paged Media](https://www.w3.org/TR/css-page-3/) et [Generated Content for Paged Media](https://www.w3.org/TR/css-gcpm-3/) sur les navigateurs récents.
+Il vient donc compléter Chrome qui [supporte](https://caniuse.com/#feat=css-paged-media) uniquement une toute petite partie.
+
+</br>
+.box[
+.color1[`r icon::fa_exclamation_circle()` Une librairie JS en plein développement]
+]
+
+.footnote[(1) https://blog.eleven-labs.com/fr/tutoriel-polyfill/]
+---
+layout: true
+# Les principes
+.subtitle[CSS Paged Media & paged.js]
+---
+.left-column[
+### CSS for Paged MediaStandard 
+]
+.right-column[
+CSS for Paged Media standard est un bout de la norme CSS W3C: 
+* CSS Paged Media Module Level 3
+* CSS Generated Content for Paged Media Module
+* CSS Page Floats
+*CSS Fragmentation Module Level 3
+
+Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design with Sass](https://medium.com/@sandersk/streamlining-css-print-design-with-sass-debaa2a204c3))
+
+]
+---
+.left-column[
+### CSS for Paged MediaStandard 
+### The Page Model
+]
+
+.right-column[
+.center[
+![:scale 50%](https://www.w3.org/TR/css-page-3/images/PageBox.png)
+]
+```css
+@page {
+  size: A5;
+}
+@page {
+  margin: 1in 2in .5in 2in;
+}
+```
+]
+
+---
+.left-column[
+### CSS for Paged MediaStandard 
+### The Page Model
+### Margin Box
+]
+
+.right-column[
+* Découpage d'une page et des marges en boites identifiables
+.center[
+![:scale 70%](https://www.pagedmedia.org/wp-content/uploads/2018/11/9d1dd9cee0c92ee1d7865d7a0ba428d7.svg)
+]
+* Dans chaque boite, des règles CSS classiques
+]
+---
+.left-column[
+### CSS for Paged MediaStandard 
+### The Page Model
+### Margin Box
+]
+.right-column[
+
+```css
+@page {
+  size: a4;
+  margin: 15mm;
+  @top-center {
+    content: "Mon Document Paginé";
+  }
+  @bottom-right-corner {
+    content: "p. " counter(page);    
+  }
+}
+
+@page :right {
+  @bottom-right-corner {
+    content: counter(page)"/"counter(pages);    
+  }
+}
+
+@page :left {
+  @bottom-left-corner {
+    content: counter(page)"/"counter(pages);    
+  }
+}
+
+```
+]
+---
+.left-column[
+### Le standard CSS for Paged Media 
+### Le modèle Page
+### Les "Margin Box"
+### Saut de pages 
+]
+
+.right-column[
+* Saut de page avant tous les titres 1
+
+```css
+h1 {
+  page-break-before: always;
+}
+```
+
+* Eviter les sauts dans un tableau
+
+```css
+table {
+  page-break-inside: avoid;
+}
+```
+]
+---
+layout: false
+# Comment modifier les templates ? 
