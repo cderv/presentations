@@ -60,6 +60,10 @@ h1, h2, h3 {
   margin-bottom:20px;
 }
 
+.remark-code {
+  font-size: 50%;
+}
+
 .remark-code-line-highlighted {
   background-color: rgba(255, 165, 60, 0.3);
 }
