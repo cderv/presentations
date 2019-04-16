@@ -1,3 +1,20 @@
+p, pre {
+    font-size: 140%;
+}
+
+/*
+.remark-slide-content {
+    font-size: 30px;
+}
+*/
+
+.footnote {
+    position: absolute;
+    bottom: 0.5em;
+    padding-right: 4em;
+    font-size: 70%;
+}
+
 h1, h2, h3 {
   font-weight: normal;
   color: #0A7FB2;
@@ -13,6 +30,10 @@ h1, h2, h3 {
 
 .color2 {
   color: #FFA53C;
+}
+
+.small {
+  font-size: 60%;
 }
 
 .remark-slide-content h1 {

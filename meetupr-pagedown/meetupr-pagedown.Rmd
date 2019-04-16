@@ -14,6 +14,7 @@ output:
       highlightSpans: true
       highlightLines: true
       countIncrementalSlides: false
+      beforeInit: "macros.js"
 editor_options: 
   chunk_output_type: console
 ---
@@ -56,7 +57,105 @@ CC BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0/
 
 ---
-# Une idée française
+# Rmarkdown pour produire des PDF... mais sans Latex
+.subtitle[Une idée farfelue ?]
+
+.center[
+![:scale 150%](img/Bookdown-contest-pulpdown.png)
+]
+
+---
+# Rmarkdown pour produire des PDF... mais sans Latex
+.subtitle[C'est possible !]
+.pull-left[
+![:scale 260px](https://community.rstudio.com/uploads/default/optimized/2X/0/04ef1fae28be62be8e645652ebf5fb15ac7dce10_2_579x750.jpeg)
+
+]
+
+.pull-right[
+![:scale 260px](https://community.rstudio.com/uploads/default/optimized/2X/3/38c159da843d4bde750a04b0472e66cc27b5d261_2_579x750.png)
+]
+</br>
+* Projet Demo `r icon::fa_github()`: [**RLesur/pulpdown**](https://github.com/RLesur/pulpdown)
+* Utilisation ici du logiciel [Prince XML](https://www.princexml.com/)
+
+---
+
+# Pagedown
+.subtitle[Des html paginés avec Rmarkdown]
+
+
+Suite au concours, une collaboration Yihui Xie et Romain Lesur 
+
+</br>
+
+Version 0.2 sur le CRAN : Experimental `r icon::fa_exclamation_circle()`  
+
+</br>
+
+Préférer une installation depuis `r icon::fa_github()`
+
+```r
+remotes::install_github('rstudio/pagedown')
+```
+
+Nécessite **Pandoc > 2** - RStudio 1.2 vient avec. (Sortie début Avril)
+
+</br>  
+Pour voir le résultat: Google Chrome ou Chromium recommandé.
 
 
 ---
+
+# Utilisation
+.subtitle[</br>]
+
+De nombreux templates disponibles ! 
+</br>
+> File -> New File -> R Markdown -> From Template
+
+.center[
+![:scale 80%](img/template_rstudio.png)
+]
+
+---
+layout:true
+# Template inclus
+.subtitle[A réutiliser ou pour modèle]
+---
+
+.color1[**Paged HTML document** (`pagedown::html_paged`)]
+
+https://pagedown.rbind.io/
+
+![:scale 100%](https://user-images.githubusercontent.com/163582/47673682-58b11880-db83-11e8-87fd-b5e753af7288.png)
+
+---
+
+.color1[**Journal of Statistical Software article** (`pagedown::jss_paged`)]
+
+![:scale 100%](https://user-images.githubusercontent.com/19177171/51005498-5b46cb80-153f-11e9-9026-4b50a9f3d3f1.png)
+
+---
+.color1[**Un CV** ! (`pagedown::html_resume`)]
+
+![:scale 100%](https://user-images.githubusercontent.com/163582/46879762-7a34a500-ce0c-11e8-87e3-496f3577ff05.png)
+
+---
+.color1[**Une lettre** (`pagedown::html_letter`)]
+
+![:scale 100%](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)
+
+---
+
+.color1[Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedown::poster_relaxed`)] .small[https://pagedown.rbind.io/poster-relaxed]
+
+![:scale 85%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
+
+---
+layout: false
+
+# Des exemples dans la nature ? 
+
+<iframe src="https://rlesur.gitlab.io/statcanrug/slides.pdf" width="900" height="500" style="border: none;"></iframe>
+[Reproducible Corporate Publications with R](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur
