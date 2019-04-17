@@ -3,6 +3,14 @@ p, pre {
     margin-top: 0.2em;
 }
 
+li, ul {
+  font-size:110%;
+}
+
+sup {
+  font-size: 50%;
+}
+
 /*
 .remark-slide-content {
     font-size: 30px;
@@ -11,13 +19,19 @@ p, pre {
 
 .footnote {
     position: absolute;
-    bottom: 0.5em;
+    bottom: 0.6em;
     padding-right: 4em;
     font-size: 70%;
 }
 
 h1, h2, h3 {
   font-weight: normal;
+  color: #0A7FB2;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
   color: #0A7FB2;
 }
 
@@ -35,6 +49,9 @@ h1, h2, h3 {
 
 .small {
   font-size: 60%;
+}
+.big {
+  font-size: 150%;
 }
 
 .remark-slide-content h1 {
@@ -61,7 +78,11 @@ h1, h2, h3 {
 }
 
 .remark-code {
-  font-size: 50%;
+  font-size: 70%;
+}
+
+.right-column .remark-code {
+  font-size: 63%;
 }
 
 .remark-code-line-highlighted {
@@ -81,7 +102,7 @@ h1, h2, h3 {
 /* Two-column layout */
 .left-column {
   color: #777;
-  width: 25%;
+  width: 23%;
   height: 92%;
   float: left;
 }
@@ -96,7 +117,7 @@ h1, h2, h3 {
 }
 
 .right-column {
-  width: 65%;
+  width: 70%;
   float: right;
   padding-top: 0em;
 }

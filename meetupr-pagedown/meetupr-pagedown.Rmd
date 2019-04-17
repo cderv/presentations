@@ -1,5 +1,5 @@
 ---
-title: "Pagedown pour de belles publications PDF avec HTML et CSS"
+title: "Pagedown</br>pour des publications PDF</br>avec HTML et CSS"
 subtitle: "Meetup R Addicts"
 author: "Christophe Dervieux"
 knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, output_file = "index.html", encoding = "UTF-8")})
@@ -30,7 +30,8 @@ options(htmltools.dir.version = FALSE)
 </br>    
 ### <img src="https://www.rte-france.com/sites/all/themes/rte/images/logo.png" height= "30" width="30"> RTE (Réseau de Transport d'Electricité)<sup>1</sup> 
 </br>
-### R admin, developer advocate. En appui des projets et des utilisateurs. 
+### Admin R<sup>2</sup>, Developpeur.  
+### En appui des projets et des utilisateurs. 
 </br>    
 .pull-left[
 .center[
@@ -47,7 +48,8 @@ options(htmltools.dir.version = FALSE)
 ]
 
 .footnote[
-[1] cette présentation n'est pas dans un cadre officiel - juste un partage personnel. 
+[1] cette présentation n'est pas dans un cadre officiel - juste un partage personnel.  
+[2] https://rviews.rstudio.com/2017/06/21/analytics-administration-for-r/
 ]
 
 ???
@@ -61,7 +63,10 @@ https://creativecommons.org/licenses/by-sa/4.0/
 .subtitle[Une idée farfelue ?]
 --
 .center[
-![:scale 100%](img/Bookdown-contest-pulpdown.png)
+![:scale 100%](img/Bookdown-contest-pulpdown-title.png)
+![:scale 200%](img/Bookdown-contest-pulpdown-text.png)
+
+.box[Un magazine PDF avec Rmarkdown ?]
 ]
 
 ---
@@ -88,7 +93,7 @@ https://creativecommons.org/licenses/by-sa/4.0/
 Suite au concours, une collaboration Yihui Xie et Romain Lesur 
 
 .box[.color1[Permettre la création de documents ** mise en page pour publication pdf** en HTML et CSS]]
-
+</br>
 Version 0.2 sur le CRAN  `r icon::fa_exclamation_circle()` Experimental   
 
 Préférer une installation depuis `r icon::fa_github()` pour les dernières nouveautés et corrections
@@ -99,7 +104,7 @@ remotes::install_github('rstudio/pagedown')
 
 Nécessite **Pandoc > 2** - inclut dans RStudio > 1.2 (Release début Avril)
 
-Pour voir le résultat: Google Chrome ou Chromium
+Pour voir le résultat: Google Chrome ou [Chromium](https://chromium.woolyss.com/#notes)
 
 
 ---
@@ -117,42 +122,44 @@ De nombreux templates disponibles !
 
 ---
 layout:true
-# Templates inclus
-.subtitle[A réutiliser ou pour modèle]
+# Templates pour modèle
+
 ---
 
-.color1[**Paged HTML document** (`pagedown::html_paged`)]
-
+**Paged HTML document** (`pagedown::html_paged`)
 https://pagedown.rbind.io/
 
 ![:scale 100%](https://user-images.githubusercontent.com/163582/47673682-58b11880-db83-11e8-87fd-b5e753af7288.png)
 
 ---
 
-.color1[**Journal of Statistical Software article** (`pagedown::jss_paged`)]
+**Journal of Statistical Software article** (`pagedown::jss_paged`)
 
 ![:scale 100%](https://user-images.githubusercontent.com/19177171/51005498-5b46cb80-153f-11e9-9026-4b50a9f3d3f1.png)
 
 ---
-.color1[**Un CV** ! (`pagedown::html_resume`)]
+**Un CV** ! (`pagedown::html_resume`)
 
 ![:scale 100%](https://user-images.githubusercontent.com/163582/46879762-7a34a500-ce0c-11e8-87e3-496f3577ff05.png)
 
 ---
-.color1[**Une lettre** (`pagedown::html_letter`)]
+**Une lettre** (`pagedown::html_letter`)
 
 ![:scale 100%](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)
 
 ---
 
-.color1[Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedown::poster_relaxed`)] .small[https://pagedown.rbind.io/poster-relaxed]
+Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedown::poster_relaxed`)</br> 
 
-![:scale 60%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
-
+.center[
+![:scale 70%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
+.small[https://pagedown.rbind.io/poster-relaxed]  
 .small[Full CSS ici - la mise en forme est faite totalement en CSS]
+
+]
 ---
 
-.color1[Livre "à la bookdown" (`pagedown::book_crc`)]
+Livre "à la bookdown" (`pagedown::book_crc`)
 ![:scale 90%](https://user-images.githubusercontent.com/163582/51346450-4b5d4900-1a63-11e9-8f22-dc632ab0b06b.png)
 
 ---
@@ -166,12 +173,11 @@ layout: false
 .subtitle[Une librairie open-source pour</br>paginer des contenus dans un navigateur]
 
 [Paged.js](https://www.pagedmedia.org/paged-js/), c'est un .color1[**Polyfill**]
-> Un polyfill, c’est simple. C’est un ensemble de fonctions permettant de simuler, sur un navigateur web ancien, des fonctionnalités qui ne sont pas nativement disponible. <sup>1</sup>
+> Un polyfill, c’est simple. C’est un ensemble de **fonctions permettant de simuler**, sur un navigateur web ancien, **des fonctionnalités** qui ne sont **pas nativement disponible**. <sup>1</sup>
 
 Ici, _Paged.js_ vient rendre disponibles les spécifications W3C sur [Paged Media](https://www.w3.org/TR/css-page-3/) et [Generated Content for Paged Media](https://www.w3.org/TR/css-gcpm-3/) sur les navigateurs récents.
 Il vient donc compléter Chrome qui [supporte](https://caniuse.com/#feat=css-paged-media) uniquement une toute petite partie.
 
-</br>
 .box[
 .color1[`r icon::fa_exclamation_circle()` Une librairie JS en plein développement]
 ]
@@ -277,7 +283,7 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 
 ```css
 h1 {
-  page-break-before: always;
+  break-before: page;
 }
 ```
 
@@ -285,7 +291,7 @@ h1 {
 
 ```css
 table {
-  page-break-inside: avoid;
+  break-inside: avoid;
 }
 ```
 ]
@@ -301,7 +307,7 @@ layout: true
 
 .right-column[
 
-```r
+```yaml
 ---
 title: "pagedown: Create Paged HTML"
 shorttitle: "Printing R Markdown with CSS"
@@ -336,8 +342,10 @@ Depuis R, la "magie" de xaringan pour nous aider:
 
 ```r
 # prévisuliser avec un server local 
+
 # le document Rmd
 xaringan::inf_mr("your-document.Rmd")
+
 # le document actif dans RStudio
 xaringan::inf_mr()
 ```
@@ -366,7 +374,7 @@ pagedown::chrome_print("mondocument.Rmd")
 ```
 
 Cette fonction peut ou pas fonctionner. 
-L'impression automatisée est compliqué et doit être améliorés.
+L'impression automatisée est compliquée et doit être améliorées.
 .small[(prise en compte de tous les htmlwidget, interactions javascript, délais avant impression, ...)]
 
 ]
@@ -428,7 +436,7 @@ pagedown::chrome_print(
 
 .right-column[
 
-### CSS, CSS, CSS !!
+#### CSS, CSS, CSS !!
 
 * Modifier les règles CSS par un nouveau document
 
@@ -440,13 +448,13 @@ output:
 
 * Modifier par pages et par marges
 
-### Modifier ou Ajouter des templates
+#### Modifier ou Ajouter des templates
 
 * Maitre Jedi du CSS ! 
-* Template HTML pandoc : Un sujet à part entière ! 
+* Template HTML pandoc : Un sujet à part entière! 
 
 .box[
-.small[Volontaires ? S'inspirer des exemples dans Pagedown]
+.small[Volontaires? S'inspirer des exemples dans Pagedown]
 ]
 
 
@@ -455,25 +463,20 @@ output:
 ---
 layout: false
 # Ressources
-.subtitle[</br>]
 
-### Sur pagedown
+#### Sur pagedown
 
 * Talk sur Pagedown par Yihui Xie à RStudio Conf 2019 ([Video](https://resources.rstudio.com/rstudio-conf-2019/pagedown-creating-beautiful-pdfs-with-r-markdown-and-css), [slides](https://slides.yihui.name/2019-rstudio-conf-pagedown.html)) par Romain Lesur
 * [Reproducible Corporate Publications with `r icon::fa_r_project()`](https://rlesur.gitlab.io/statcanrug/slides.pdf)
 * le dépot `r icon::fa_github()` : https://github.com/rstudio/pagedown 
 
---
-
-### Sur Paged.js et Paged Media
+#### Sur Paged.js et Paged Media
 
 * Le projet Paged.js : https://www.pagedmedia.org/paged-js/
 * [Print css rocks](https://print-css.rocks/) website by Andreas Jung
 * [Introduction to CSS for Paged Media](http://www.xmlprague.cz/wp-content/uploads/www.xmlprague.cz/2018/02/CSS-Print.pdf) .small[(Tony Graham, Antenna House - XMLPrague 2018 Conference)]
 
---
-
-### Où trouver de l'aide ?
+#### Où trouver de l'aide ?
 
 * Sur la communauté slack francophone (https://frama.link/r-grrr), demandez @Romain Lesur et les testeurs qui ont déjà fait des supers documents.
 * Sur les issues du `r icon::fa_github()`
