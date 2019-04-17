@@ -1,0 +1,143 @@
+p, pre {
+    font-size: 140%;
+    margin-top: 0.2em;
+}
+
+li, ul {
+  font-size:110%;
+}
+
+sup {
+  font-size: 50%;
+}
+
+/*
+.remark-slide-content {
+    font-size: 30px;
+}
+*/
+
+.footnote {
+    position: absolute;
+    bottom: 0.6em;
+    padding-right: 4em;
+    font-size: 70%;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  color: #0A7FB2;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+  color: #0A7FB2;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+.color1 {
+  color: #0A7FB2;
+}
+
+.color2 {
+  color: #FFA53C;
+}
+
+.small {
+  font-size: 60%;
+}
+.big {
+  font-size: 150%;
+}
+
+.remark-slide-content h1 {
+  text-align: center;
+}
+
+.remark-slide-content h1, .remark-slide-content h2,
+.remark-slide-content h3, .remark-slide-content h4,
+.remark-slide-content p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.remark-slide-content h1 + p {
+  margin-top: 0px;
+}
+
+.remark-slide-content .subtitle {
+  display: block;
+  text-align: center;
+  color: #777;
+  font-size: 35px;
+  margin-bottom:20px;
+}
+
+.remark-code {
+  font-size: 70%;
+}
+
+.right-column .remark-code {
+  font-size: 63%;
+}
+
+.remark-code-line-highlighted {
+  background-color: rgba(255, 165, 60, 0.3);
+}
+
+/*inverse*/
+.inverse {
+  background-color: #0A7FB2;
+  text-shadow: none;
+}
+
+.inverse, .inverse h1, .inverse h2, .inverse h3 {
+  color: #fff /*black*/;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 23%;
+  height: 92%;
+  float: left;
+}
+
+.left-column h2, .left-column h3 {
+  font-size:30px;
+  color: #777;
+}
+
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #0A7FB2;
+}
+
+.right-column {
+  width: 70%;
+  float: right;
+  padding-top: 0em;
+}
+
+/* box */
+
+.box {
+  display: block;
+  text-align: center;
+  position: relative;
+  border: 2px solid #0A7FB2;
+  padding: 10px;
+  margin: 10px;
+}
+
+.box p {
+  margin: 0px;
+}
+
+.annexe .remark-slide-number {
+  display: none;
+}
+
