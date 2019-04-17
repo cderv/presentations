@@ -154,7 +154,7 @@ Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedow
 .center[
 
 ![:scale 70%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
-
+</br>
 .small[https://pagedown.rbind.io/poster-relaxed]  
 .small[Full CSS ici - la mise en forme est faite totalement en CSS]
 
@@ -250,16 +250,16 @@ Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design w
 @page {
   size: a4;
   margin: 15mm;
-  @top-center {
+*  @top-center {
     content: "Mon Document Paginé";
   }
-  @bottom-right-corner {
+*  @bottom-right-corner {
     content: "p. " counter(page);    
   }
 }
 
 @page :right {
-  @bottom-right-corner {
+*  @bottom-right-corner {
     content: counter(page)"/"counter(pages);    
   }
 }
