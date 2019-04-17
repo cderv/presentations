@@ -302,13 +302,22 @@ layout: true
 .right-column[
 
 ```r
-title: "A Multi-page HTML Document"
+---
+title: "pagedown: Create Paged HTML"
+shorttitle: "Printing R Markdown with CSS"
 author: "Yihui Xie and Romain Lesur"
-date: "`r Sys.Date()`"
+date: '`r Sys.Date()`'
+subtitle: A Less Traveled Road to PDF and Printing
 output:
-*  pagedown::html_paged:
-    toc: true
-    number_sections: false
+*  pagedown::html_paged: 
+*   toc: true
+*   self_contained: false
+toc-title: Contents
+paged-footnotes: true
+lot: true
+lof: true
+bibliography: index.bib
+---
 ```
 
 Consulter la documentation pour les différentes options de chaque format
@@ -468,3 +477,12 @@ layout: false
 
 * Sur la communauté slack francophone (https://frama.link/r-grrr), demandez @Romain Lesur et les testeurs qui ont déjà fait des supers documents.
 * Sur les issues du `r icon::fa_github()`
+
+---
+layout: false
+class: inverse, center, middle, title-slide
+count: false
+# Merci ! 
+</br>
+</br>
+https://cderv.github.io/presentations/meetupr-pagedown/
