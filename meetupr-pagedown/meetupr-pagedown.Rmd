@@ -152,7 +152,9 @@ https://pagedown.rbind.io/
 Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedown::poster_relaxed`)</br> 
 
 .center[
+
 ![:scale 70%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
+
 .small[https://pagedown.rbind.io/poster-relaxed]  
 .small[Full CSS ici - la mise en forme est faite totalement en CSS]
 
