@@ -4,5 +4,5 @@ all: prez
 prez:
 		Rscript -e "source('render.R');render_prez(FALSE)"
 
-prez_sc: MEETUP_R-Rex_Datalab.Rmd
+prez_sc:
 		Rscript -e "source('render.R');render_prez(TRUE)"
