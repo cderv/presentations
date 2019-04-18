@@ -66,7 +66,7 @@ https://creativecommons.org/licenses/by-sa/4.0/
 ![:scale 100%](img/Bookdown-contest-pulpdown-title.png)
 ![:scale 200%](img/Bookdown-contest-pulpdown-text.png)
 
-.box[Un magazine PDF avec Rmarkdown ?]
+.box[Un magazine PDF avec Rmarkdown et HTML/CSS ?]
 ]
 
 ---
