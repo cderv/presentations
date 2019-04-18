@@ -351,7 +351,9 @@ xaringan::inf_mr("your-document.Rmd")
 # le document actif dans RStudio
 xaringan::inf_mr()
 ```
-ou utiliser l'Addin [Infinite Moon Reader](https://bookdown.org/yihui/rmarkdown/xaringan-preview.html)
+ou utiliser l'Addin [Infinite Moon Reader](https://bookdown.org/yihui/rmarkdown/xaringan-preview.html)  
+
+Le Viewer RStudio fonctionne aussi puisqu'il utilise un server local.
 ]
 
 .footnote[(1) pas de connexion en _file://_ mais en _http://_]
@@ -468,15 +470,16 @@ layout: false
 
 #### Sur pagedown
 
-* Talk sur Pagedown par Yihui Xie à RStudio Conf 2019 ([Video](https://resources.rstudio.com/rstudio-conf-2019/pagedown-creating-beautiful-pdfs-with-r-markdown-and-css), [slides](https://slides.yihui.name/2019-rstudio-conf-pagedown.html)) par Romain Lesur
-* [Reproducible Corporate Publications with `r icon::fa_r_project()`](https://rlesur.gitlab.io/statcanrug/slides.pdf)
+* Talk sur Pagedown par Yihui Xie à RStudio Conf 2019 ([Video](https://resources.rstudio.com/rstudio-conf-2019/pagedown-creating-beautiful-pdfs-with-r-markdown-and-css), [slides](https://slides.yihui.name/2019-rstudio-conf-pagedown.html))
+* [Reproducible Corporate Publications with `r icon::fa_r_project()`](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur
 * le dépot `r icon::fa_github()` : https://github.com/rstudio/pagedown 
 
-#### Sur Paged.js et Paged Media
+#### Sur CSS, CSS Paged Media et Paged.js 
 
-* Le projet Paged.js : https://www.pagedmedia.org/paged-js/
+* [CSS tricks](https://css-tricks.com/)
 * [Print css rocks](https://print-css.rocks/) website by Andreas Jung
 * [Introduction to CSS for Paged Media](http://www.xmlprague.cz/wp-content/uploads/www.xmlprague.cz/2018/02/CSS-Print.pdf) .small[(Tony Graham, Antenna House - XMLPrague 2018 Conference)]
+* Le projet Paged.js : https://www.pagedmedia.org/paged-js/
 
 #### Où trouver de l'aide ?
 

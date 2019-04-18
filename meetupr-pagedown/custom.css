@@ -7,6 +7,10 @@ li, ul {
   font-size:110%;
 }
 
+ul {
+  margin-top: 0.5em;
+}
+
 sup {
   font-size: 50%;
 }
