@@ -86,7 +86,7 @@ https://creativecommons.org/licenses/by-sa/4.0/
 
 ---
 
-# Pagedown
+# ![:scale 8%](https://user-images.githubusercontent.com/163582/51942716-66be4180-23dd-11e9-8dbc-fdb4f465d1c2.png) Pagedown 
 .subtitle[Des html paginés avec Rmarkdown]
 
 
@@ -172,7 +172,7 @@ layout: true
 .small[[Reproducible Corporate Publications with R](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur]
 ---
 <iframe src="https://edouard-legoupil.github.io/unhcr_paged", width="900" height="500" style="border: none;"></iframe>
-.small[[How to quickly produce statistical reports? The UNHCR “R-Cookbook”](https://edouard-legoupil.github.io/unhcr_paged/) par Edouard Legoupil]
+.small[[How to quickly produce statistical reports? The UNHCR “R-Cookbook”](https://edouard-legoupil.github.io/unhcr_paged/)</br>(en cours de construction) par Edouard Legoupil]
 ---
 layout: false
 # Rendu possible par Paged.js
