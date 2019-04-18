@@ -65,7 +65,7 @@ https://creativecommons.org/licenses/by-sa/4.0/
 ![:scale 100%](img/Bookdown-contest-pulpdown-title.png)
 ![:scale 200%](img/Bookdown-contest-pulpdown-text.png)
 
-.box[Un magazine PDF avec Rmarkdown ?]
+.box[Un magazine PDF avec Rmarkdown et HTML/CSS ?]
 ]
 
 ---
@@ -155,7 +155,7 @@ Poster sur le theme de [Relaxed](https://github.com/RelaxedJS/ReLaXed) (`pagedow
 ![:scale 70%](https://user-images.githubusercontent.com/163582/47672385-e12dba00-db7f-11e8-92de-af94d5bab12f.jpg)
 &lt;/br&gt;
 .small[https://pagedown.rbind.io/poster-relaxed]  
-.small[Full CSS ici - la mise en forme est faite totalement en CSS]
+.small[Full HTML/CSS ici - la mise en forme est faite sans JavaScript]
 
 ]
 ---
@@ -201,7 +201,7 @@ CSS for Paged Media standard est un bout de la norme CSS W3C:
 * CSS Paged Media Module Level 3
 * CSS Generated Content for Paged Media Module
 * CSS Page Floats
-*CSS Fragmentation Module Level 3
+* CSS Fragmentation Module Level 3
 
 Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design with Sass](https://medium.com/@sandersk/streamlining-css-print-design-with-sass-debaa2a204c3))
 
@@ -341,7 +341,7 @@ Consulter la documentation pour les différentes options de chaque format
 ]
 
 .right-column[
-Comme le rendu HTML fait appel du Javascript et du CSS, il faut prévisualiser avec un serveur web local ou distant.&lt;sup&gt;1&lt;/sup&gt;  
+Comme le rendu HTML fait appel à du Javascript et du CSS, il faut prévisualiser avec un serveur web local ou distant.&lt;sup&gt;1&lt;/sup&gt;  
 
 Depuis R, la "magie" de xaringan pour nous aider: 
 
@@ -371,7 +371,7 @@ Le Viewer RStudio fonctionne aussi puisqu'il utilise un server local.
 
 .color1[Le plus simple:] Utiliser la fonction Print PDF de Chrome quand la page est chargée.
 
-.color1[Le plus automatisé:] Une fonction speciale `pagedown::chrome_print` pour lancer l'impression chrome depuis R&lt;sup&gt;1&lt;/sup&gt;:
+.color1[Le plus automatisé:] Une fonction spéciale `pagedown::chrome_print` pour lancer l'impression chrome depuis R&lt;sup&gt;1&lt;/sup&gt;:
 
 ```r
 # le html
@@ -381,7 +381,7 @@ pagedown::chrome_print("mondocument.Rmd")
 ```
 
 Cette fonction peut ou pas fonctionner. 
-L'impression automatisée est compliquée et doit être améliorées.
+L'impression automatisée est compliquée et doit être améliorée.
 .small[(prise en compte de tous les htmlwidget, interactions javascript, délais avant impression, ...)]
 
 ]
