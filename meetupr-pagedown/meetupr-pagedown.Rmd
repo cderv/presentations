@@ -165,12 +165,16 @@ Livre "à la bookdown" (`pagedown::book_crc`)
 ![:scale 90%](https://user-images.githubusercontent.com/163582/51346450-4b5d4900-1a63-11e9-8f22-dc632ab0b06b.png)
 
 ---
-layout: false
+layout: true
 # Des exemples dans la nature ? 
---
-<iframe src="https://rlesur.gitlab.io/statcanrug/slides.pdf" width="900" height="500" style="border: none;"></iframe>
-[Reproducible Corporate Publications with R](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur
 ---
+<iframe src="https://rlesur.gitlab.io/statcanrug/slides.pdf" width="900" height="500" style="border: none;"></iframe>
+.small[[Reproducible Corporate Publications with R](https://rlesur.gitlab.io/statcanrug/slides.pdf) par Romain Lesur]
+---
+<iframe src="https://edouard-legoupil.github.io/unhcr_paged", width="900" height="500" style="border: none;"></iframe>
+.small[[How to quickly produce statistical reports? The UNHCR “R-Cookbook”](https://edouard-legoupil.github.io/unhcr_paged/) par Edouard Legoupil]
+---
+layout: false
 # Rendu possible par Paged.js
 .subtitle[Une librairie open-source pour</br>paginer des contenus dans un navigateur]
 
@@ -483,7 +487,7 @@ layout: false
 
 #### Où trouver de l'aide ?
 
-* Sur la communauté slack francophone (https://frama.link/r-grrr), demandez @Romain Lesur et les testeurs qui ont déjà fait des supers documents.
+* Sur la communauté slack francophone (https://frama.link/r-grrr), demandez @Romain Lesur, @edouard et les testeurs qui ont déjà fait des supers documents.
 * Sur les issues du `r icon::fa_github()`
 
 ---
