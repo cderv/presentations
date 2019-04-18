@@ -202,7 +202,7 @@ CSS for Paged Media standard est un bout de la norme CSS W3C:
 * CSS Paged Media Module Level 3
 * CSS Generated Content for Paged Media Module
 * CSS Page Floats
-*CSS Fragmentation Module Level 3
+* CSS Fragmentation Module Level 3
 
 Utilisé dans la publication par les éditeurs ([Streamlining CSS Print Design with Sass](https://medium.com/@sandersk/streamlining-css-print-design-with-sass-debaa2a204c3))
 
