@@ -3,6 +3,8 @@
 This repo contains presentations I made in several places. 
 These presentations are available through `https://cderv.github.io/presentations/<FOLDER_NAME>`
 
+Some of the presentation are also hosted elsewhere but are linked here.
+
 ## Currently Online
 
 + (English) [Building a datalab service With RStudio products](https://speakerdeck.com/cderv/building-a-datalab-service), 06/06/2019,  RStudio roadshow by Thinkr
