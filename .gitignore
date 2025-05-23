@@ -1,5 +1,15 @@
+# Generated files that should not be tracked in git
+index.html
+README_files/
+_site/
+
+# R related files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-*/self_contained.html
+*.Rproj
+
+# System files
+.DS_Store
+Thumbs.db

@@ -10,7 +10,7 @@ presentations <- read_yaml("_presentations.yml")$presentations
 
 # Filter to include only external presentations
 external_presentations <- presentations |>
-  keep(~ if(is.null(.$external)) FALSE else .$external)
+  keep(~ if (is.null(.$external)) FALSE else .$external)
 
 # Read the redirect template
 redirect_template <- readLines("_redirect_template.html", warn = FALSE)
@@ -23,18 +23,20 @@ create_redirect <- function(presentation) {
   if (!dir_exists(folder_path)) {
     dir_create(folder_path)
   }
-  
+
   # Generate the redirect HTML content with explicit variable substitution
   # to avoid issues with 'title' potentially being a function name
-  redirect_content <- glue(redirect_template, 
-                          title = presentation$title,
-                          url = presentation$url,
-                          .open = "{{", 
-                          .close = "}}")
-  
+  redirect_content <- glue(
+    redirect_template,
+    title = presentation$title,
+    url = presentation$url,
+    .open = "{{",
+    .close = "}}"
+  )
+
   # Write the redirect file
   writeLines(redirect_content, file.path(folder_path, "index.html"))
-  
+
   cat(glue("Created redirect for '{presentation$title}' in {folder_path}\n"))
 }
 
