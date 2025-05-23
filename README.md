@@ -3,7 +3,7 @@
 This repo contains presentations I made in several places. 
 These presentations are available through `https://cderv.github.io/presentations/<FOLDER_NAME>`
 
-Some of the presentation are also hosted elsewhere but are linked here.
+Some of the presentation are also hosted elsewhere but are linked here. Redirects from `https://cderv.github.io/presentations/<FOLDER_NAME>` to the actual hosting locations are provided for convenience.
 
 ## Currently Online
 
@@ -19,4 +19,4 @@ Some of the presentation are also hosted elsewhere but are linked here.
 
 ## Licence
 
-https://creativecommons.org/licenses/by-sa/4.0/
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
