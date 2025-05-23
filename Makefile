@@ -4,7 +4,7 @@ all: readme
 
 readme: README.qmd
 	@echo "Rendering README.md from README.qmd..."
-	quarto render README.qmd
+	quarto render README.qmd --to gfm
 	@echo "README.md updated!"
 
 redirects: _presentations.yml generate_redirects.R

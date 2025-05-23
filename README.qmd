@@ -1,5 +1,8 @@
 ---
-format: gfm
+format: 
+  gfm: default
+  html:
+    from: markdown+emoji
 ---
 
 ```{r}
