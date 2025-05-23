@@ -1,0 +1,85 @@
+presentations:
+  - title: "Personnaliser ses documents Quarto avec _brand.yml"
+    url: "https://cderv.github.io/rr2025-quarto-brand-yml/"
+    folder: "rr2025-quarto-brand-yml"
+    date: "2025-05-20"
+    event: "R Rencontre 2025"
+    repo: "https://github.com/cderv/rr2025-quarto-brand-yml"
+    description: "Présentation sur la personnalisation des documents Quarto avec le fichier _brand.yml"
+    language: "fr"
+    external: true
+    
+  - title: "Quarto - Elevating Rmd for Advanced Publishing"
+    url: "https://cderv.github.io/user2024-quarto-talk/"
+    folder: "user2024-quarto-talk"
+    date: "2024-07-10"
+    event: "useR! 2024"
+    repo: "https://github.com/cderv/user2024-quarto-talk"
+    talk_page: "https://sched.co/1c8xG"
+    description: "An introduction to Quarto's capabilities beyond R Markdown"
+    language: "en"
+    external: true
+    
+  - title: "Introduction to Quarto"
+    url: "https://cderv.github.io/raukr-2023-quarto/"
+    folder: "raukr-2023-quarto"
+    date: "2023-06-15"
+    event: "RAUKR workshop (organized by NBIS and SciLifeLab, Sweden)"
+    repo: "https://github.com/cderv/raukr-2023-quarto"
+    description: "Introduction to Quarto for creating reproducible scientific documents, presented at the RAUKR workshop in Sweden."
+    language: "en"
+    external: true
+    
+  - title: "A tour of {knitr} engines: {knitr} not only knits R"
+    url: "https://user2022-knitr-engines.netlify.app/"
+    folder: "user2022-knitr-engines"
+    date: "2022-06-22"
+    event: "useR! 2022"
+    repo: "https://github.com/cderv/user2022-knitr-engines"
+    description: "Presentation on using and extending knitr engines for literate programming beyond R."
+    language: "en"
+    external: true
+    
+  - title: "Boost Your R Markdown Skills"
+    url: "https://raukr-boost-rmd-skills.netlify.app/"
+    folder: "raukr-2021-rmd-boost"
+    date: "2021-06-10"
+    event: "RAUKR workshop (organized by NBIS and SciLifeLab, Sweden)"
+    repo: "https://github.com/cderv/raukr-2021-rmd-boost"
+    description: "Tips and techniques to enhance your R Markdown documents, presented at the RAUKR workshop in Sweden."
+    language: "en"
+    external: true
+    
+  - title: "Building a datalab service With RStudio products"
+    url: "https://speakerdeck.com/cderv/building-a-datalab-service"
+    folder: "datalab-service-rstudio"
+    date: "2019-06-06"
+    event: "RStudio roadshow by Thinkr"
+    language: "en"
+    external: true
+    
+  - title: "Headless chrome automation with R"
+    url: "https://cderv.gitlab.io/user2019-crrri/"
+    folder: "user2019-crrri"
+    date: "2019-07-12"
+    event: "useR!2019, lightning talk"
+    language: "en"
+    external: true
+    
+  - title: "PDF publication with pagedown"
+    url: "https://cderv.github.io/presentations/meetupr-pagedown"
+    folder: "meetupr-pagedown"
+    date: "2019-04-18"
+    event: "meetup R addict"
+    meetup_link: "https://www.meetup.com/fr-FR/rparis/events/259951140/"
+    language: "fr"
+    external: false
+    
+  - title: "'Datalab' pour R - Partage d'expérience"
+    url: "https://cderv.github.io/presentations/MEETUPR-DATALAB"
+    folder: "MEETUPR-DATALAB"
+    date: "2018-05-28"
+    event: "meetup R addict"
+    meetup_link: "https://www.meetup.com/fr-FR/rparis/events/250768026/"
+    language: "fr"
+    external: false

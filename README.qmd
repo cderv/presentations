@@ -1,0 +1,82 @@
+---
+format: gfm
+---
+
+```{r}
+#| include: false
+library(yaml)
+library(dplyr)
+library(lubridate)
+library(purrr)
+
+# Read presentations data
+presentations_data <- read_yaml("_presentations.yml")$presentations
+
+# Convert dates to Date objects and sort by date (most recent first)
+presentations <- presentations_data %>%
+  map(function(p) {
+    p$date <- as.Date(p$date)
+    return(p)
+  }) %>%
+  # Sort by date (newest first)
+  map_dfr(~as.data.frame(.x, stringsAsFactors = FALSE)) %>%
+  arrange(desc(date))
+```
+
+# Talks & Presentations
+
+This repo contains presentations I made in several places. 
+These presentations are available through `https://cderv.github.io/presentations/<FOLDER_NAME>`
+
+Some of the presentation are also hosted elsewhere but are linked here. Redirects from `https://cderv.github.io/presentations/<FOLDER_NAME>` to the actual hosting locations are provided for convenience.
+
+## Currently Online
+
+```{r}
+#| echo: false
+#| results: asis
+
+format_presentation <- function(p) {
+  # Format date for display
+  date_display <- format(p$date, "%d/%m/%Y")
+  
+  # Set flag emoji based on language
+  flag <- ifelse(p$language == "fr", ":fr:", ":gb:")
+  
+  # Start with the bullet point, flag and title
+  line <- paste0("+ ", flag, " [", p$title, "](", p$url, ") ", date_display, ", ", p$event, ".")
+  
+  # Add repo if available
+  if (!is.na(p$repo)) {
+    line <- paste0(line, " [Repo](", p$repo, ").")
+  }
+  
+  # Add talk page if available
+  if (!is.na(p$talk_page)) {
+    line <- paste0(line, " Talk page: ", p$talk_page)
+  }
+  
+  # Add meetup link if available
+  if (!is.na(p$meetup_link)) {
+    line <- paste0(line, " [Event page](", p$meetup_link, ")")
+  }
+  
+  # Add description if available
+  if (!is.na(p$description)) {
+    line <- paste0(line, " ", p$description)
+  }
+  
+  return(line)
+}
+
+presentations_text <- map_chr(split(presentations, 1:nrow(presentations)), function(p) {
+  format_presentation(p)
+})
+
+# Output each presentation on its own line
+cat(paste(presentations_text, collapse = "\n\n"))
+```
+
+## Licence
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
