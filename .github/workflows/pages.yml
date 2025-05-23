@@ -52,7 +52,6 @@ jobs:
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-
   # Deployment job
   deploy:
     permissions:
@@ -60,7 +59,7 @@ jobs:
       pages: write
       id-token: write
     runs-on: ubuntu-latest
-    needs: jekyll-build
+    needs: build
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
